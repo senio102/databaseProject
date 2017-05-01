@@ -40,7 +40,7 @@ create table city(
 
 create table us_state(
 	house int,
-	state varchar,
+	us_state varchar,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )

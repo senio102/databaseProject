@@ -8,7 +8,7 @@
 		declare @bathroom_count int
 		declare @zip_code int
 		declare @city varchar(40)
-		declare @state varchar(2)
+		declare @us_state varchar(2)
 		declare @sqft int
 		declare @house_year int
 		select * into #ttable from inserted
@@ -20,7 +20,7 @@
 					select top 1 @bathroom_count = bathroom_count from #ttable
 					select top 1 @zip_code = zip_code from #ttable
 					select top 1 @city = city from #ttable
-					select top 1 @state = state from #ttable
+					select top 1 @us_state = us_state from #ttable
 					select top 1 @sqft = sqft from #ttable
 					select top 1 @house_year = house_year from #ttable
 					declare @i varchar(500)
@@ -35,7 +35,7 @@
 					insert into Bathroom_Count values(@i,@bathroom_count)
 					insert into zip_code values(@i,@zip_code)
 					insert into city values(@i,@city)
-					insert into us_state values(@i,@state)
+					insert into us_state values(@i,@us_state)
 					insert into house_sqft values(@i,@sqft)
 					insert into year_built values(@i,@house_year)
 
