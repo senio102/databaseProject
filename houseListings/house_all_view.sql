@@ -5,5 +5,5 @@
 			from House_Identifier, House_Price, Bedroom_Count, Bathroom_Count, zip_code, city, us_state, house_sqft, year_built 
 				where House_Identifier.house_id = House_Price.house and House_Identifier.house_id = Bedroom_Count.house and
 				 House_Identifier.house_id = Bathroom_Count.house and House_Identifier.house_id = zip_code.house and
-				  House_Identifier.house_id = city.house and House_Identifier.house_id = us_state.house and 
+				  House_Identifier.house_id = city.house and House_Identifier.house_id = us_state.house and
 				  House_Identifier.house_id = house_sqft.house and House_Identifier.house_id = year_built.house

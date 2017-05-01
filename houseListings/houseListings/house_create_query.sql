@@ -1,5 +1,5 @@
 ﻿create table House_Identifier(
-	house_id int IDENTITY(1,1),
+	house_id int,
 	primary key(house_id)
 )
 
