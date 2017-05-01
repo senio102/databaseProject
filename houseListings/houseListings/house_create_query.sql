@@ -4,57 +4,57 @@
 )
 
 create table House_Price(
-	house int(10),
-	price int(9),
+	house int,
+	price int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table Bedroom_Count(
-	house int(10),
-	bedroom int(2),
+	house int,
+	bedroom int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table Bathroom_Count(
-	house int(10),
-	bathroom int(2),
+	house int,
+	bathroom int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table zip_code(
-	house int(10),
-	zip int(5),
+	house int,
+	zip int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table city(
-	house int(10),
-	city varchar(40),
+	house int,
+	city varchar,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table us_state(
-	house int(10),
-	state varchar(2),
+	house int,
+	state varchar,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table house_sqft(
-	house int(10),
-	sqft int(5),
+	house int,
+	sqft int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table year_built(
-	house int(10),
-	house_year int(4),
+	house int,
+	house_year int,
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
