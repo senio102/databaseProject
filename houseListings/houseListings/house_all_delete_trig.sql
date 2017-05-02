@@ -1,5 +1,4 @@
-﻿--triggers on delete
-create trigger house_all_delete_trig
+﻿create trigger house_all_delete_trig
 	on House_All
 	instead of delete
 	as
@@ -25,8 +24,6 @@ create trigger house_all_delete_trig
 					select top 1 @us_state = us_state from #ttable
 					select top 1 @sqft = sqft from #ttable
 					select top 1 @house_year = house_year from #ttable
-
-			
 					delete from House_Price
 						where house = @house
 					delete from Bedroom_Count

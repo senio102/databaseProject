@@ -23,5 +23,10 @@ namespace houseListings
         {
             Response.Redirect("searchHouse.aspx");
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("updatePage.aspx");
+        }
     }
 }

@@ -13,7 +13,7 @@
 		declare @house_year int
 		select * into #ttable from inserted
 		begin
-			select top 1 @price from #ttable
+			select top 1 @price = price from #ttable
 			select top 1 @bedroom = bedroom from #ttable
 			select top 1 @bathroom = bathroom from #ttable
 			select top 1 @zip = zip from #ttable
@@ -22,6 +22,7 @@
 			select top 1 @sqft = sqft from #ttable
 			select top 1 @house_year = house_year from #ttable
 			declare @i varchar(500)
+			--create random ID to assign each house
 			set @i=(SELECT CAST(RAND() * 1000000 AS INT) AS [RandomNumber])
 			while exists (select * from House_Identifier where house_id=@i)
 			begin

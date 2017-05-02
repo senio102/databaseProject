@@ -13,6 +13,8 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="New House" />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Search Houses" />
     
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Update" />
+    
     </div>
     </form>
 </body>

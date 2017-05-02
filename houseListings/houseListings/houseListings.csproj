@@ -203,6 +203,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="house_all_delete_trig.sql" />
+    <Content Include="house_all_update.sql" />
     <Content Include="house_all_view.sql" />
     <Content Include="house_create_query.sql" />
     <Content Include="Contact.aspx" />
@@ -255,6 +256,7 @@
     <Content Include="Global.asax" />
     <Content Include="searchHouse.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="updatePage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -441,6 +443,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="updatePage.aspx.cs">
+      <DependentUpon>updatePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updatePage.aspx.designer.cs">
+      <DependentUpon>updatePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
