@@ -33,14 +33,14 @@ create table zip_code(
 
 create table city(
 	house int,
-	city varchar,
+	city varchar(40),
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )
 
 create table us_state(
 	house int,
-	us_state varchar,
+	us_state varchar(2),
 	foreign key(house) references House_Identifier(house_id),
 	primary key(house)
 )

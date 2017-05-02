@@ -202,6 +202,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="house_all_delete_trig.sql" />
     <Content Include="house_all_view.sql" />
     <Content Include="house_create_query.sql" />
     <Content Include="Contact.aspx" />
@@ -218,7 +219,7 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="homePage.aspx" />
-    <Content Include="house_insert_trig.sql" />
+    <Content Include="house_all_insert_trig.sql" />
     <Content Include="newHouse.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -254,7 +255,6 @@
     <Content Include="Global.asax" />
     <Content Include="searchHouse.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="SQLQuery2.sql" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
