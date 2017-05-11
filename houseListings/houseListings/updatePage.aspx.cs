@@ -19,7 +19,7 @@ namespace houseListings
                 try
                 {
                     con.Open();
-                    string oString = "Select * from House_Identifier";
+                    string oString = "Select * from House_Identifier";//h
                     SqlCommand oCmd = new SqlCommand(oString, con);
                     using (SqlDataReader oReader = oCmd.ExecuteReader())
                     {
