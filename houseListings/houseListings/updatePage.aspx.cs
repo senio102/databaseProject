@@ -98,6 +98,7 @@ namespace houseListings
                         cmd.Parameters.AddWithValue("@house", DropDownList1.SelectedValue);
                         cmd.ExecuteNonQuery();
                     }
+                    Response.Redirect("homePage.aspx");
                     conn.Close();
                 }
             }

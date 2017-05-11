@@ -1,0 +1,1 @@
+﻿delete from House_All where house_id>0

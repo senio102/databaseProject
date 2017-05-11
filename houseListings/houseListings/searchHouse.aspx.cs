@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,6 +33,28 @@ namespace houseListings
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["masterDB"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(@"delete from House_All where house_id=@house", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@house", DropDownList1.SelectedValue);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    Response.Redirect("searchHouse.aspx");
+                }
+            }
+            catch (SqlException ex)
+            {
+                Button1.Text = ex.ToString();
+            }
         }
     }
 }

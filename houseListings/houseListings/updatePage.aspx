@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:Label ID="Label10" runat="server" Text="Update a House:"></asp:Label>
+        <br />
+        <br />
+    
         <asp:Label ID="Label9" runat="server" Text="Select a House ID"></asp:Label>
 &nbsp;&nbsp;&nbsp;
     
@@ -47,6 +51,7 @@
         <asp:Label ID="Label8" runat="server" Text="Year Built"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+        <br />
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" />
     

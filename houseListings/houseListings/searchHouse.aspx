@@ -10,6 +10,12 @@
     <form id="form1" runat="server">
     <div>
     
+        <br />
+        <asp:Label ID="Label1" runat="server" Font-Underline="True" Text="List of Houses:"></asp:Label>
+        <br />
+        <br />
+        <br />
+    
     </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="house_id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
@@ -25,9 +31,15 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:masterDB %>" SelectCommand="SELECT * FROM [House_All]"></asp:SqlDataSource>
+        <br />
     
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" />
     
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="house_id" DataValueField="house_id">
+        </asp:DropDownList>
+&nbsp;
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Delete" />
     </form>
 </body>
 </html>
