@@ -11,16 +11,16 @@
 		declare @us_state varchar(2)
 		declare @sqft int
 		declare @house_year int
-		select * into #ttable from inserted
+		select * into #temp from inserted
 		begin
-			select top 1 @price = price from #ttable
-			select top 1 @bedroom = bedroom from #ttable
-			select top 1 @bathroom = bathroom from #ttable
-			select top 1 @zip = zip from #ttable
-			select top 1 @city = city from #ttable
-			select top 1 @us_state = us_state from #ttable
-			select top 1 @sqft = sqft from #ttable
-			select top 1 @house_year = house_year from #ttable
+			select top 1 @price = price from #temp
+			select top 1 @bedroom = bedroom from #temp
+			select top 1 @bathroom = bathroom from #temp
+			select top 1 @zip = zip from #temp
+			select top 1 @city = city from #temp
+			select top 1 @us_state = us_state from #temp
+			select top 1 @sqft = sqft from #temp
+			select top 1 @house_year = house_year from #temp
 			declare @i varchar(500)
 			--create random ID to assign each house
 			set @i=(SELECT CAST(RAND() * 1000000 AS INT) AS [RandomNumber])
@@ -37,6 +37,8 @@
 			insert into us_state values(@i,@us_state)
 			insert into house_sqft values(@i,@sqft)
 			insert into year_built values(@i,@house_year)
-			delete from #ttable where price = @price
+			delete from #temp where price = @price
 		end
 	end
+
+

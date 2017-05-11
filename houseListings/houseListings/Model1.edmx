@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\SENIO102\SOURCE\REPOS\DATABASEPROJECT\HOUSELISTINGS\HOUSELISTINGS\APP_DATA\DATABASE1.MDF.dbo.House_All' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="House_All">
+          <Key>
+            <PropertyRef Name="house_id" />
+          </Key>
+          <Property Name="house_id" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" />
+          <Property Name="bedroom" Type="int" />
+          <Property Name="bathroom" Type="int" />
+          <Property Name="zip" Type="int" />
+          <Property Name="city" Type="varchar" MaxLength="40" />
+          <Property Name="us_state" Type="varchar" MaxLength="2" />
+          <Property Name="sqft" Type="int" />
+          <Property Name="house_year" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="House_All" EntityType="Self.House_All" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [House_All].[house_id] AS [house_id], 
+    [House_All].[price] AS [price], 
+    [House_All].[bedroom] AS [bedroom], 
+    [House_All].[bathroom] AS [bathroom], 
+    [House_All].[zip] AS [zip], 
+    [House_All].[city] AS [city], 
+    [House_All].[us_state] AS [us_state], 
+    [House_All].[sqft] AS [sqft], 
+    [House_All].[house_year] AS [house_year]
+    FROM [dbo].[House_All] AS [House_All]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="House_All">
+          <Key>
+            <PropertyRef Name="house_id" />
+          </Key>
+          <Property Name="house_id" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="bedroom" Type="Int32" />
+          <Property Name="bathroom" Type="Int32" />
+          <Property Name="zip" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="us_state" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="sqft" Type="Int32" />
+          <Property Name="house_year" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="House_All" EntityType="Self.House_All" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="House_All">
+            <EntityTypeMapping TypeName="Database1Model.House_All">
+              <MappingFragment StoreEntitySet="House_All">
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="bedroom" ColumnName="bedroom" />
+                <ScalarProperty Name="bathroom" ColumnName="bathroom" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="us_state" ColumnName="us_state" />
+                <ScalarProperty Name="sqft" ColumnName="sqft" />
+                <ScalarProperty Name="house_year" ColumnName="house_year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

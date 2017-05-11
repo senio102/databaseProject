@@ -10,6 +10,10 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:Label ID="Label9" runat="server" Font-Underline="True" Text="Enter New House Info:"></asp:Label>
+        <br />
+        <br />
+    
         <asp:Label ID="Label1" runat="server" Text="Price"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox1" runat="server" style="padding-left: 0px"></asp:TextBox>

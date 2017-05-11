@@ -84,7 +84,8 @@ namespace houseListings
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["masterDB"].ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("update House_All set price=@price, bedroom=@bedroom, bathroom=@bathroom, zip=@zip, city=@city, us_state=@state, sqft=@sqft, house_year=@year where house_id= @house", conn))
+                    using (SqlCommand cmd = new SqlCommand(@"update House_All set price=@price, bedroom=@bedroom, bathroom=@bathroom, zip=@zip, city=@city, 
+                                                            us_state=@state, sqft=@sqft, house_year=@year where house_id= @house", conn))
                     {
                         cmd.Parameters.AddWithValue("@price", TextBox1.Text);
                         cmd.Parameters.AddWithValue("@bedroom", TextBox2.Text);

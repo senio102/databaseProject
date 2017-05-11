@@ -32,7 +32,8 @@ namespace houseListings
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["masterDB"].ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("insert into House_All(price, bedroom, bathroom, zip, city, us_state, sqft, house_year) values(@price, @bedroom, @bathroom, @zip, @city, @state, @sqft, @year)", conn))
+                    using (SqlCommand cmd = new SqlCommand(@"insert into House_All(price, bedroom, bathroom, zip, city, us_state, sqft, house_year) 
+                                                            values(@price, @bedroom, @bathroom, @zip, @city, @state, @sqft, @year)", conn))
                     {
                         cmd.Parameters.AddWithValue("@price", TextBox1.Text);
                         cmd.Parameters.AddWithValue("@bedroom", TextBox2.Text);

@@ -12,18 +12,18 @@
 		declare @us_state varchar(2)
 		declare @sqft int
 		declare @house_year int
-		select * into #ttable from deleted
+		select * into #temp from deleted
 		begin
-			while(exists(select house from #ttable))
+			while(exists(select house from #temp))
 				begin
-					select top 1 @price from #ttable
-					select top 1 @bedroom = bedroom from #ttable
-					select top 1 @bathroom = bathroom from #ttable
-					select top 1 @zip = zip from #ttable
-					select top 1 @city = city from #ttable
-					select top 1 @us_state = us_state from #ttable
-					select top 1 @sqft = sqft from #ttable
-					select top 1 @house_year = house_year from #ttable
+					select top 1 @price from #temp
+					select top 1 @bedroom = bedroom from #temp
+					select top 1 @bathroom = bathroom from #temp
+					select top 1 @zip = zip from #temp
+					select top 1 @city = city from #temp
+					select top 1 @us_state = us_state from #temp
+					select top 1 @sqft = sqft from #temp
+					select top 1 @house_year = house_year from #temp
 					delete from House_Price
 						where house = @house
 					delete from Bedroom_Count
@@ -40,10 +40,10 @@
 						where house = @house				
 					delete from year_built
 						where house = @house
-					--base tables
+					--
 					delete from House_Identifier
 						where house_id = @house
-					delete from #ttable where house_id = @house
+					delete from #temp where house_id = @house
 				end
 			end
 		end
